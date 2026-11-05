@@ -1,0 +1,42 @@
+; Engine configuration file.
+; Pocket Wilds - Godot 4.3 (Compatibility renderer)
+
+config_version=5
+
+[application]
+
+config/name="Pocket Wilds"
+config/description="An original creature-bonding RPG. Every creature, tile and note is made in code."
+config/version="1.0.0"
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.17, 0.43, 0.45, 1)
+boot_splash/show_image=false
+
+[autoload]
+
+D="*res://scripts/Data.gd"
+G="*res://scripts/Game.gd"
+Sfx="*res://scripts/Sfx.gd"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=320
+window/size/window_width_override=1440
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=false
+pointing/emulate_mouse_from_touch=false
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.17, 0.43, 0.45, 1)
