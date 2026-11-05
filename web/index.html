@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pocket Wilds — an original creature-bonding RPG</title>
+<meta name="description" content="Bond with 24 original creatures across 6 elements, beat 3 Wardens and the Champion of Crown Spire. A Godot 4 RPG you can play free in your browser.">
+<meta name="theme-color" content="#2c6e74">
+<link rel="icon" href="play/index.icon.png">
+<style>
+:root{--bg:#1f4f54;--sky:#8fd3ee;--panel:#fbf6e9;--ink:#2a2540;--dim:#5d5878;--line:#3a3550;--gold:#ffd24a;--leaf:#5cbf5a;--coral:#ef6a5a;--mint:#8fe3c3}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:#f4fbf7;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+a{color:var(--mint)}
+.sky{background:linear-gradient(180deg,#8fd3ee 0%,#cfe8e0 55%,#6cc17a 56%,#3f9a55 100%);color:var(--ink);text-align:center;padding:56px 16px 40px;position:relative;overflow:hidden}
+.sky .cloud{position:absolute;background:#fff;opacity:.8;border-radius:40px;height:22px;animation:drift 40s linear infinite}
+@keyframes drift{from{transform:translateX(-200px)}to{transform:translateX(110vw)}}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:#2c5a66;font-weight:700}
+h1{font-size:clamp(40px,10vw,76px);line-height:1;margin:10px 0 6px;color:var(--gold);-webkit-text-stroke:3px var(--line);paint-order:stroke fill;letter-spacing:.03em}
+h1 span{color:#fff8e6}
+.tag{font-size:clamp(16px,3.8vw,21px);margin:0 0 26px;font-weight:600;color:#23414a}
+.play{display:inline-flex;align-items:center;gap:12px;padding:16px 38px;font-size:22px;font-weight:800;color:var(--ink);background:linear-gradient(180deg,#ffe58a,var(--gold));border:4px solid var(--line);border-radius:14px;text-decoration:none;box-shadow:0 6px 0 var(--line);transition:transform .12s ease,box-shadow .12s ease}
+.play:hover,.play:focus-visible{transform:translateY(-3px);box-shadow:0 9px 0 var(--line);outline:none}
+.play:active{transform:translateY(3px);box-shadow:0 3px 0 var(--line)}
+.sub{margin-top:14px;font-size:14px;color:#1f3d3a}
+.sub a{color:#1d4f9a;font-weight:600}
+.hero{margin:30px auto 0;max-width:820px;border:4px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 16px 40px #0005}
+.hero img{display:block;width:100%;height:auto;image-rendering:pixelated}
+main{max-width:980px;margin:0 auto;padding:0 16px 48px}
+section{margin-top:48px}
+h2{font-size:24px;margin:0 0 14px;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:var(--panel);color:var(--ink);border:3px solid var(--line);border-radius:10px;padding:14px 16px}
+.card b{color:#2f7f75}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.shots figure{margin:0;background:var(--panel);color:var(--dim);border:3px solid var(--line);border-radius:10px;overflow:hidden}
+.shots img{display:block;width:100%;height:auto}
+.shots figcaption{padding:8px 12px;font-size:14px}
+.els{display:flex;flex-wrap:wrap;gap:8px}
+.el{padding:4px 12px;border-radius:99px;font-weight:700;font-size:14px;color:#fff;border:2px solid #0003}
+table{width:100%;border-collapse:collapse;background:var(--panel);color:var(--ink);border:3px solid var(--line);border-radius:10px;overflow:hidden}
+td{padding:8px 12px;border-top:1px solid #d9d0bb;font-size:15px}
+td:first-child{font-weight:700;white-space:nowrap}
+kbd{background:#fff;border:1px solid #b9b0a0;border-bottom-width:3px;border-radius:5px;padding:0 6px;font-size:13px}
+footer{text-align:center;color:#cfe7df;font-size:14px;padding:30px 16px 40px}
+@media (max-width:480px){.play{padding:14px 26px;font-size:19px}td{font-size:14px;padding:7px 8px}td:first-child{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="sky">
+  <div class="cloud" style="top:30px;width:120px;animation-delay:-5s"></div>
+  <div class="cloud" style="top:90px;width:90px;animation-delay:-22s"></div>
+  <div class="eyebrow">JaiGod · Godot 4 RPG</div>
+  <h1>POCKET <span>WILDS</span></h1>
+  <p class="tag">Bond with 24 original creatures. Earn 3 Warden sigils. Claim Crown Spire.</p>
+  <a class="play" href="play/"><span>▶</span> Play in browser</a>
+  <div class="sub">Free · desktop &amp; phone · progress saves automatically · <a href="https://github.com/JaiGod/pocket-wilds">source on GitHub</a></div>
+  <div class="hero"><img src="screenshots/title.jpg" alt="Pocket Wilds title screen with six original creatures on a hillside" width="900" height="600"></div>
+</div>
+<main>
+  <section>
+    <h2>What's in the Wilds</h2>
+    <div class="grid">
+      <div class="card"><b>24 original creatures</b><br>12 evolution lines, each drawn in code from shapes: no sprites, no borrowed designs.</div>
+      <div class="card"><b>Bonding Charms</b><br>Weaken a wild creature, then toss a Bonding, Kinship or Soulbond Charm. Low HP means better odds.</div>
+      <div class="card"><b>A whole region</b><br>Two towns, four routes, the winding Hollowdeep Cave and the summit of Crown Spire.</div>
+      <div class="card"><b>3 Wardens + a Champion</b><br>Earn the Grove, Deep and Sky sigils, then face Champion Aurex's team of five.</div>
+      <div class="card"><b>Party of 6 + Storage</b><br>Swap partners at any Haven, check the Codex, and save anywhere from the menu.</div>
+      <div class="card"><b>Made for phones too</b><br>On-screen D-pad, A/B buttons and tap-to-walk. Chiptune music and sounds made with code.</div>
+    </div>
+  </section>
+  <section>
+    <h2>Six elements</h2>
+    <div class="els">
+      <span class="el" style="background:#4fae4a">Verdant</span><span class="el" style="background:#3a86d0">Tide</span><span class="el" style="background:#9a7a52">Terra</span><span class="el" style="background:#e0662c">Cinder</span><span class="el" style="background:#3fa99a">Zephyr</span><span class="el" style="background:#c9a426">Lumen</span>
+    </div>
+    <p>Each element beats two others and resists two. Mixed teams win.</p>
+  </section>
+  <section>
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <figure><img src="screenshots/town.jpg" alt="Mossgate town" loading="lazy" width="900" height="600"><figcaption>Mossgate, where your journey starts</figcaption></figure>
+      <figure><img src="screenshots/route.jpg" alt="Fernway Path route" loading="lazy" width="900" height="600"><figcaption>Fernway Path: tall grass and trainers</figcaption></figure>
+      <figure><img src="screenshots/battle.jpg" alt="Battle against a wild Puffwing" loading="lazy" width="900" height="600"><figcaption>A wild Puffwing appears</figcaption></figure>
+      <figure><img src="screenshots/codex.jpg" alt="Codex screen" loading="lazy" width="900" height="600"><figcaption>The Codex tracks every creature</figcaption></figure>
+    </div>
+  </section>
+  <section>
+    <h2>Controls</h2>
+    <table>
+      <tr><td>Move</td><td><kbd>←↑↓→</kbd> / <kbd>WASD</kbd> · D-pad or tap the map on phones</td></tr>
+      <tr><td>A (talk / confirm)</td><td><kbd>Z</kbd> <kbd>Space</kbd> <kbd>Enter</kbd></td></tr>
+      <tr><td>B (cancel / jog)</td><td><kbd>X</kbd> <kbd>Backspace</kbd> <kbd>Shift</kbd></td></tr>
+      <tr><td>Menu</td><td><kbd>Esc</kbd> / <kbd>P</kbd>: Team, Bag, Codex, Save, Sound</td></tr>
+      <tr><td>Sound</td><td><kbd>M</kbd> toggles music and effects</td></tr>
+    </table>
+  </section>
+  <section style="text-align:center"><a class="play" href="play/"><span>▶</span> Start your journey</a></section>
+</main>
+<footer>Made by Jaineil Rana (JaKing) · part of <a href="https://github.com/JaiGod">JaiGod</a> · <a href="https://github.com/JaiGod/pocket-wilds">GitHub</a></footer>
+</body>
+</html>
