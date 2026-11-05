@@ -1,0 +1,39 @@
+name: Capture screenshots from the live site
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['tests/capture.js', '.github/workflows/screenshots.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Wait for the Pages deploy
+        run: |
+          for i in $(seq 1 40); do
+            curl -sfI https://jaigod.github.io/pocket-wilds/play/index.pck >/dev/null && echo "site is up" && break
+            echo "waiting for Pages ($i)"; sleep 20
+          done
+          sleep 30
+      - name: Play the game and capture screenshots
+        run: node tests/capture.js https://jaigod.github.io/pocket-wilds/play/ docs/screenshots
+      - name: Commit screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add docs/screenshots
+          git diff --cached --quiet || git commit -m "Capture gameplay screenshots from the live site"
+          git push
